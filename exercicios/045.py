@@ -14,7 +14,7 @@ if jogador not in opcoes:
 else:
     computador = random.randint(1, 3)
     
-    print("Computador escolhendo...")
+    print("Jo-kem-po...")
     sleep(2)
 
     print(f"Você escolheu {opcoes[jogador]} e o computador {opcoes[computador]}.")

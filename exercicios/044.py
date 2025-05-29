@@ -10,7 +10,7 @@ considerando o seu preço normal e condição de pagamento:
 
 preco = float(input("Digite o valor do pedido: "))
 pagamento = int(input("Digite o número de acordo com a forma de pagamento: \n" \
-" (1) Á vista - Dinheiro/Cheque \n (2) Á vista - Cartão \n (3) Até 2x no cartão \n (4) 3x ou mais no cartão: "))
+" (1) Á vista - Dinheiro/Cheque \n (2) Á vista - Cartão \n (3) 2x no cartão \n (4) 3x ou mais no cartão: "))
 
 if pagamento == 1:
     valor = preco-(preco*(10/100))
