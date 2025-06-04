@@ -17,16 +17,16 @@ mulheres_menor_20 = 0
 for i in range(1, 5):
     nome = input(f"Digite o nome da {i}ª pessoa: ").strip()
     idade = int(input(f"Digite a idade da {i}ª pessoa: "))
-    sexo = input(f"Digite o sexo da {i}ª pessoa (M/F): ").strip().upper()
+    sexo = int(f"Digite o sexo da {i}ª pessoa ([1] para Masculino /[0] para Feminino): ")
 
     soma_idade += idade
     media = soma_idade / i 
 
-    if sexo == 'M' and (idade > idade_mais_velho or i == 1):
+    if sexo == 1 and (idade > idade_mais_velho or i == 1):
         idade_mais_velho = idade
         mais_velho = nome
 
-    if sexo == 'F' and idade < 20:
+    if sexo == 0 and idade < 20:
         mulheres_menor_20 += 1
     
     
