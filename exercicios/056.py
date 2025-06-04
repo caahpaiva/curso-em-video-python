@@ -17,7 +17,7 @@ mulheres_menor_20 = 0
 for i in range(1, 5):
     nome = input(f"Digite o nome da {i}ª pessoa: ").strip()
     idade = int(input(f"Digite a idade da {i}ª pessoa: "))
-    sexo = int(f"Digite o sexo da {i}ª pessoa ([1] para Masculino /[0] para Feminino): ")
+    sexo = int(input(f"Digite o sexo da {i}ª pessoa ([1] para Masculino /[0] para Feminino): "))
 
     soma_idade += idade
     media = soma_idade / i 
