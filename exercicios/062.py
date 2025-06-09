@@ -9,13 +9,13 @@ razao = int(input("Digite a razão da PA: "))
 pa = primeiro_termo
 new_limite = int(input("Digite a quantidade de termos a mostrar: "))
 
+
 while new_limite != 0:
     cont = 0
     while cont < new_limite:
         print(f'{pa}', end=' -> ')
         pa += razao
         cont += 1
-        # limite += 1
     new_limite = int(input("Digite a quantidade de termos a mostrar: "))
 
 print('Fim')
