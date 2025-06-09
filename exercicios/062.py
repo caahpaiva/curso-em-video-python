@@ -7,7 +7,6 @@ mais alguns termos. O programa encerra quando ele disser que quer mostrar 0 term
 primeiro_termo = int(input("Digite o primeiro termo da PA: "))
 razao = int(input("Digite a razão da PA: "))
 pa = primeiro_termo
-limite = 0
 new_limite = int(input("Digite a quantidade de termos a mostrar: "))
 
 while new_limite != 0:
@@ -16,7 +15,7 @@ while new_limite != 0:
         print(f'{pa}', end=' -> ')
         pa += razao
         cont += 1
-        limite += 1
+        # limite += 1
     new_limite = int(input("Digite a quantidade de termos a mostrar: "))
 
 print('Fim')
