@@ -10,21 +10,23 @@ soma = 0
 maior = 0
 menor = 0
 media = 0
-opcao = ''
+opcao = 'S'
 
 
-while opcao != 'N':
+while opcao in 'S':
     num = int(input("Digite um número: "))
+    soma += num
+    contador +=1
     if contador == 1:
         menor = num
         maior = num
-    if num > maior:
-        maior = num
-    if num < menor:
-        menor = num
-    soma += num
-    contador +=1
-    media = soma/contador
+    else:
+        if num >= maior:
+            maior = num
+        if num <= menor:
+            menor = num
+    
     opcao = str(input('Você quer continuar [S]Sim/[N]Não:')).strip().upper()[0]
 
+media = soma/contador
 print(f'O maior número digitado foi {maior}, o menor foi {menor} e a média foi {media}')
