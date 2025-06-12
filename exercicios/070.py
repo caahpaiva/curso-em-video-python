@@ -19,7 +19,7 @@ menor = 0
 
 while True:
     produto = str(input('Nome do produto: ')).strip()
-    preco = float(input('Valor: '))
+    preco = float(input('Valor: R$ '))
     continuar = str(input('Quer continuar? [S/N]' )).upper().strip()[0]
 
     while continuar not in ('N', 'S'):
@@ -31,11 +31,7 @@ while True:
     if preco >= 1000:
         mais_1000 += 1
 
-    if cont == 1:
-        menor = preco
-        produto_barato = produto
-
-    if preco <= menor:
+    if cont == 1 or preco <= menor:
         menor = preco
         produto_barato = produto
 
@@ -45,6 +41,6 @@ while True:
 print('-'*20)
 print('FIM DO PROGRAMA')
 print('-'*20)
-print(f'O total da compra foi {total}')
+print(f'O total da compra foi {total:.2f}')
 print(f'Temos {mais_1000} produtos custamos mais de R$ 1000.00')
 print(f'O produto mais barato foi {produto_barato} que custa R$ {menor:.2f}')
