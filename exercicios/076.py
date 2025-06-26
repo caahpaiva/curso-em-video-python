@@ -17,4 +17,13 @@ for produto in produtos:
         ponto = '.'* (30-len(nome))
         print(f'{nome}{ponto}R$', end ='')
     else:
-        print(f'{produto:>7.2f}') 
+        print(f'{produto:>7.2f}')
+
+
+
+
+# for pos in range(0, len(produtos)):
+#     if pos % 2 == 0:
+#         print(f'{produtos[pos]:.<30}', end='')
+#     else:
+#         print(f'R${produtos[pos]:>7.2f}')
