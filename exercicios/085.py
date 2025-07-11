@@ -4,21 +4,23 @@ em uma lista única que mantenha separados os valores pares e impares. No final,
 mostre os valores pares e ímpares em ordem crescente.
 '''
 
-lista = []
-par = []
-impar = []
+lista = [[], []]
+# par = []
+# impar = []
 
 for c in range(1,8):
     num = int(input(f'Digite o {c}º valor: '))
     if num % 2 ==0:
-        par.append(num)
+        lista.append(num)
+        lista[0].append(num)
     else:
         impar.append(num)
+        lista[1].append(num)
 
-par.sort()
-impar.sort()
-lista.append(par[:])
-lista.append(impar[:])
+lista[0].sort()
+lista[1].sort()
+# lista.append(par[:])
+# lista.append(impar[:])
 
 
 print('-='*30)
