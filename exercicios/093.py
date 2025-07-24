@@ -16,8 +16,10 @@ for i in range(0,partidas):
     gol  = int(input(f'Quantos gols na partida {i}? '))
     gols.append(gol)
     total += gol
+    
 
-campeonato['gols'] = gols
+campeonato['gols'] = gols[:]
+# campeonato['total'] = sum(gols)
 campeonato['total'] = total
 
 print('-='*30)
@@ -28,7 +30,7 @@ for k, v in campeonato.items():
     print(f'O campo {k} tem o valor {v}')
 
 print('-='*30)
-print(f'O jogador {campeonato["nome"]} jogou {partidas}.')
+print(f'O jogador {campeonato["nome"]} jogou {len(campeonato["gols"])}.')
 for c, v in enumerate(gols):
     print(f'=> Na partida {c}, fez {v} gols.')
 

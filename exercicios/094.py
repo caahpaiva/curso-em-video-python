@@ -12,47 +12,53 @@ resposta = 'S'
 qnt_pessoas = soma_idade = media =0
 pessoas = []
 mulheres = []
-maior_media = []
+# maior_media = []
 
 
 while resposta in 'S':
     pessoa = {}
-    nome = str(input('Nome: '))
-    sexo = str(input('Sexo (M/F): ')).upper().strip()[0]
-    idade = int(input('Idade: '))
+    pessoa['nome'] = str(input('Nome: '))
+    while True: 
+        sexo = str(input('Sexo (M/F): ')).upper().strip()[0]
+        if sexo in 'MF':
+            pessoa['sexo'] = sexo
+            break
+        print('ERRO! Por favor, digite apenas M ou F.')
+    pessoa['idade'] = int(input('Idade: '))
     qnt_pessoas += 1
-    soma_idade += idade
+    soma_idade += pessoa['idade'] 
     media = soma_idade /qnt_pessoas
-    pessoa['nome'] = nome
-    pessoa['sexo'] = sexo
-    pessoa['idade'] = idade
+    
+    
     pessoas.append(pessoa)
-    if sexo == 'F':
-        mulheres.append(nome)
+   
     resposta = str(input('Deseja continuar? [S/N]: ')).upper().strip()[0]
 
 
 
-for k, v in enumerate(pessoas):
-    for ke, va in v.items():
-        if ke == 'idade':
-            if va > media:
-                maior_media.append(v)
+# for k, v in enumerate(pessoas):
+#     for ke, va in v.items():
+#         if ke == 'idade':
+#             if va > media:
+#                 maior_media.append(v)
 
 
 print('-='*30)
 print(f'- O grupo tem {qnt_pessoas} pessoas')
-print(f'- A média de idade é de {media:.2f} anos')
+print(f'- A média de idade é de {media:5.2f} anos')
 print(f'- As mulheres cadastradas foram: ', end='')
-for v in mulheres:
-    print(f'{v} ', end='')
+for v in pessoas:
+    if v['sexo'] == 'F':
+        print(f'{v["nome"]} ', end='')
 print()
 print(f'- Lista das pessoas que estão acima da média: ')
-for v in maior_media:
-    for k, ve in v.items():
-        print(f'{k} = {ve}; ', end='')
+for v in pessoas:
+    if v["idade"] >= media:
+        print('    ')
+        for k, ve in v.items():
+            print(f'{k} = {ve}; ', end='')
 
-    print() 
+    
 
 
 print('<<ENCERRADO >>')
