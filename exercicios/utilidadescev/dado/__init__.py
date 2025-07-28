@@ -10,3 +10,15 @@ def leiaDinheiro(msg):
             valido = True
             return float(entrada)
 
+
+def leiaInt(pergunta):
+    valor = 0
+    while True:
+        resp = input(pergunta)
+        if resp.isnumeric(): 
+            valor = int(resp)         
+            break
+        else: 
+            print('\033[0;31mERRO! Digite um número inteiro válido.\033[m')
+        
+    return valor
