@@ -1,5 +1,4 @@
 
-
 def leiaDinheiro(msg):
     valido = False
     while not valido:
@@ -22,3 +21,4 @@ def leiaInt(pergunta):
             print('\033[0;31mERRO! Digite um número inteiro válido.\033[m')
         
     return valor
+
